@@ -1,0 +1,1 @@
+This is my etch-a-sketch project. Once i'm done with this project, i will have reinforced my DOM manipulation skills and my javascript skills along with my HTML and CSS.
