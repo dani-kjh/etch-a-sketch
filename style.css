@@ -1,0 +1,22 @@
+
+.container{
+    display:grid;
+
+    grid-template-columns: repeat(16, 30px);
+
+    grid-template-rows: repeat(16, 30px);
+    
+    margin: 40px 700px 50px 700px;
+
+    background-color: rgb(136, 138, 153);
+
+    justify-content: center ;
+}
+
+.blacken{
+    background-color:black;
+}
+
+.buttons{
+    padding: 0px 690px 150px 750px;
+}
