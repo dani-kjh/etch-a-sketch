@@ -1,3 +1,13 @@
+const addClass = e => {
+    e.target.classList.add("blacken");
+}
+
+const setRandomColor = e => {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    e.target.style.backgroundColor = "#" + randomColor;
+}
+
+
 function resizeGrid(){
     let newSize = window.prompt('New row and column size');
     newSize = parseInt(newSize);
@@ -15,17 +25,9 @@ function resizeGrid(){
     const cells = document.querySelectorAll(".cell");
 
     cells.forEach( (div) =>{
-        div.addEventListener('mouseenter', () => {
-            div.classList.add("blacken");
-        });
+        div.addEventListener('mouseenter', addClass);
     } );
 }
-
-
-
-
-
-
 
 function InitGrid(){
     const container = document.querySelector(".container");
@@ -40,9 +42,7 @@ function InitGrid(){
     const cells = document.querySelectorAll(".cell");
 
     cells.forEach( (div) =>{
-        div.addEventListener('mouseenter', () => {
-            div.classList.add("blacken");
-        });
+        div.addEventListener('mouseenter', addClass);
     } );
 }
 
@@ -59,9 +59,23 @@ function InitButtons(){
         
         resizeGrid();
     });
+    const random = document.querySelector(".random");
+    random.addEventListener('click',setRandomizeButton);
+    
+    }
+
+
+
+
+function setRandomizeButton (){
+    const cells = document.querySelectorAll(".cell");
+
+    cells.forEach( (div) => {
+        div.removeEventListener('mouseenter', addClass);
+        div.addEventListener('mouseenter', setRandomColor);
+    });
 
 }
-
 
 
 InitGrid();
